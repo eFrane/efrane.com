@@ -10,7 +10,7 @@
         <a class="text-blue-500 hover:text-pink-500" href="https://github.com/eFrane">programmer</a>,
         <a class="text-blue-500 hover:text-pink-500" href="https://eyeem.com/eFrane">photographer</a>,
         and <a class="text-blue-500 hover:text-pink-500" href="https://meanderingsoul.com">blogger</a>
-        from Berlin, Germany. Also, I like oxford commas.
+        from Berlin, Germany. Orthographical quirks include oxford commas and post-quotation-mark interpunction.
         If you encounter me
         <a class="text-blue-500 hover:text-pink-500" href="https://www.goodreads.com/user/show/5222663-stefan">without a book</a>
         in my carry-on, you can generally safely assume I'm ill.
@@ -26,14 +26,22 @@
 
                 <nav class="text-2xs">
                     <ul class="md:inline-flex">
-                        <li class="flex-auto">
+                        @if ($project->github)
+                        <li class="flex-auto md:pr-1">
                             GitHub:
                             <a href="https://github.com/{{ $project->github }}" class="text-blue-500 hover:text-pink-500">
                                 {{ $project->github }}
                             </a>
                         </li>
+                        @endif
+
+                        @if ($project->website)
                         <li class="flex-auto">Website: <a href="{{ $project->website }}"  class="text-blue-500 hover:text-pink-500">{{ $project->website }}</a></li>
+                        @endif
+
+                        @if ($project->license)
                         <li class="flex-1">License: {{ $project->license }}</li>
+                        @endif
                     </ul>
                 </nav>
 
