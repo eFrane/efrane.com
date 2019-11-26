@@ -3,5 +3,10 @@
 return [
     'production' => false,
     'baseUrl' => '',
-    'collections' => [],
+    'collections' => [
+        'projects' =>[
+            'path' => 'projects',
+            'sort' => 'name'
+        ]
+    ],
 ];

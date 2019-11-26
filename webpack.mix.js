@@ -1,4 +1,5 @@
 let mix = require('laravel-mix');
+let tailwind = require('tailwindcss');
 let build = require('./tasks/build.js');
 
 mix.disableSuccessNotifications();
@@ -12,7 +13,15 @@ mix.webpackConfig({
 });
 
 mix.js('source/_assets/js/main.js', 'js')
-    .sass('source/_assets/sass/main.scss', 'css')
     .options({
         processCssUrls: false,
-    }).version();
+        postCss: [
+            require('postcss-import'),
+            tailwind()
+        ]
+    })
+    .postCss('source/_assets/css/main.css', 'css/main.css')
+    // .purgeCss({
+    //     folders: ['source']
+    // })
+    .version();

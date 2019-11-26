@@ -1,0 +1,8 @@
+---
+name: vuepress-plugin-mermaidjs
+github: eFrane/vuepress-plugin-mermaidjs
+website: https://vuepress-plugin-mermaidjs.efrane.com
+license: MIT
+---
+
+A plugin for VuePress to provide support for diagramming with the MermaidJS library.
