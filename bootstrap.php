@@ -17,14 +17,16 @@ use TightenCo\Jigsaw\Jigsaw;
  */
 
  $events->afterBuild(static function (Jigsaw $jigsaw) {
-    $indexHTMLPath = $jigsaw->getDestinationPath() . DIRECTORY_SEPARATOR . 'index.html';
-    $indexHTML = simplexml_load_file($indexHTMLPath);
+   if (true === $jigsaw->getConfig('production')) {
+      $indexHTMLPath = $jigsaw->getDestinationPath() . DIRECTORY_SEPARATOR . 'index.html';
+      $indexHTML = simplexml_load_file($indexHTMLPath);
 
-    $cssPath = $jigsaw->getDestinationPath() . (string)$indexHTML->head->style['data-src'];
+      $cssPath = $jigsaw->getDestinationPath() . (string)$indexHTML->head->style['data-src'];
 
-    $cssContents = file_get_contents($cssPath);
+      $cssContents = file_get_contents($cssPath);
 
-    $indexHTML->head->style = $cssContents;
+      $indexHTML->head->style = $cssContents;
 
-    file_put_contents($indexHTMLPath, $indexHTML->asXML());
+      file_put_contents($indexHTMLPath, $indexHTML->asXML());
+   }
  });

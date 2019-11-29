@@ -5,8 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
         <meta name="description" content="Portfolio minisite of Stefan 'eFrane' Graupner" />
-        <style data-src="{{ mix('css/main.css', 'assets/build') }}">
-        </style>
+        @if ($page->production)
+        <style data-src="{{ mix('css/main.css', 'assets/build') }}"></style>
+        @else
+        <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}" />
+        @endif
         <title>eFrane: portfolio</title>
     </head>
     <body>

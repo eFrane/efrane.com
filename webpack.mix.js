@@ -2,6 +2,7 @@ let mix = require('laravel-mix');
 let tailwind = require('tailwindcss');
 let build = require('./tasks/build.js');
 require('laravel-mix-purgecss');
+let process = require('process');
 
 mix.disableSuccessNotifications();
 mix.setPublicPath('source/assets/build');
@@ -25,3 +26,7 @@ mix.js('source/_assets/js/main.js', 'js')
     .purgeCss({
         folders: ['source']
     });
+
+if (process.env.NODE_ENV !== 'production') {
+    mix.version();
+}
