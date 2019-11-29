@@ -8,9 +8,14 @@
     </head>
     <body>
         <div class="container mx-auto p-4">
-            <img
-                src="assets/images/avatar.png"
-                class="object-fill object-center w-24 h-24 rounded-full border-gray-700 border mx-auto mb-4">
+            <h1>
+                <span class="sr-only">eFrane's portfolio minisite</span>
+                <img
+                    src="assets/images/avatar.png"
+                    class="object-fill object-center w-24 h-24 rounded-full border-gray-700 border mx-auto mb-4"
+                    aria-label="eFrane's Avatar"
+                    aria-description="A hand-drawn smirking penguin, light brown-ish on white background.">
+            </h1>
 
             @yield('body')
         </div>

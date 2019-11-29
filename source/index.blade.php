@@ -1,9 +1,9 @@
 @extends('_layouts.master')
 
 @section('body')
-<div>
-    <p>
-        Hello, I am eFrane.
+<div class="font-thin">
+    <p class="mx-auto text-center mb-4">
+        Hello.  I am eFrane.
     </p>
     <p>
         I am a
@@ -17,12 +17,12 @@
     </p>
 </div>
 <div class="mt-4">
-    <h1 class="text-2xl mb-2">Things I did and do</h1>
+    <h2 class="text-2xl mb-2">Things I did and do</h2>
 
     <div class="md:flex md:flex-wrap">
         @foreach ($projects as $project)
             <section class="pr-4 pb-4 mb-4 mt-0 flex-none md:w-1/2 lg:w-1/3">
-                <h2 class="text-xl">{{ $project->name }}</h2>
+                <h3 class="text-xl">{{ $project->name }}</h3>
 
                 <nav class="text-2xs">
                     <ul class="md:inline-flex">
