@@ -7,22 +7,22 @@
     </p>
     <p>
         I am a
-        <a class="text-blue-500 hover:text-pink-500" href="https://github.com/eFrane">programmer</a>,
-        <a class="text-blue-500 hover:text-pink-500" href="https://eyeem.com/eFrane">photographer</a>,
-        and <a class="text-blue-500 hover:text-pink-500" href="https://meanderingsoul.com">blogger</a>
+        <a class="text-blue-700 hover:text-pink-900" href="https://github.com/eFrane">programmer</a>,
+        <a class="text-blue-700 hover:text-pink-900" href="https://eyeem.com/eFrane">photographer</a>,
+        and <a class="text-blue-700 hover:text-pink-900" href="https://meanderingsoul.com">blogger</a>
         from Berlin, Germany. Orthographical quirks include oxford commas and post-quotation-mark interpunction.
         If you encounter me
-        <a class="text-blue-500 hover:text-pink-500" href="https://www.goodreads.com/user/show/5222663-stefan">without a book</a>
+        <a class="text-blue-700 hover:text-pink-900" href="https://www.goodreads.com/user/show/5222663-stefan">without a book</a>
         in my carry-on, you can generally safely assume I'm ill.
     </p>
 </section>
-<section class="mt-4" aria-role="region" aria-labelled-by="h2">
-    <h2 class="text-2xl mb-2">Things I did and do</h2>
+<section class="mt-4" role="region" aria-labelledby="things_header">
+    <h2 class="text-2xl mb-2" id="things_header">Things I did and do</h2>
 
     <div class="md:flex md:flex-wrap">
         @foreach ($projects as $project)
-            <section class="pr-4 pb-4 mb-4 mt-0 flex-none md:w-1/2 lg:w-1/3" aria-role="region" aria-labelled-by="h3">
-                <h3 class="text-xl">{{ $project->name }}</h3>
+            <section class="pr-4 pb-4 mb-4 mt-0 flex-none md:w-1/2 lg:w-1/3" role="region" aria-labelledby="{{ snake_case($project->name) }}">
+                <h3 class="text-xl" id="{{ snake_case($project->name) }}">{{ $project->name }}</h3>
 
                 <nav class="text-2xs" aria-label="License and links for {{ $project->name }}">
                     <ul class="md:inline-flex">
@@ -31,7 +31,7 @@
                             GitHub:
                             <a
                                 href="https://github.com/{{ $project->github }}"
-                                class="text-blue-500 hover:text-pink-500"
+                                class="text-blue-700 hover:text-pink-900"
                                 aria-label="Visit {{ $project->github }} on GitHub">
                                 {{ $project->github }}
                             </a>
@@ -42,7 +42,7 @@
                         <li class="flex-auto">
                             Website:
                             <a href="{{ $project->website }}"
-                               class="text-blue-500 hover:text-pink-500"
+                               class="text-blue-700 hover:text-pink-900"
                                aria-label="Visit the project website for {{ $project->name }}">
                                {{ $project->website }}
                             </a>
