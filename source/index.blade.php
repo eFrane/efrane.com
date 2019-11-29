@@ -1,7 +1,7 @@
 @extends('_layouts.master')
 
 @section('body')
-<div class="font-thin">
+<section class="font-thin">
     <p class="mx-auto text-center mb-4">
         Hello.  I am eFrane.
     </p>
@@ -15,28 +15,38 @@
         <a class="text-blue-500 hover:text-pink-500" href="https://www.goodreads.com/user/show/5222663-stefan">without a book</a>
         in my carry-on, you can generally safely assume I'm ill.
     </p>
-</div>
-<div class="mt-4">
+</section>
+<section class="mt-4" aria-role="region" aria-labelled-by="h2">
     <h2 class="text-2xl mb-2">Things I did and do</h2>
 
     <div class="md:flex md:flex-wrap">
         @foreach ($projects as $project)
-            <section class="pr-4 pb-4 mb-4 mt-0 flex-none md:w-1/2 lg:w-1/3">
+            <section class="pr-4 pb-4 mb-4 mt-0 flex-none md:w-1/2 lg:w-1/3" aria-role="region" aria-labelled-by="h3">
                 <h3 class="text-xl">{{ $project->name }}</h3>
 
-                <nav class="text-2xs">
+                <nav class="text-2xs" aria-label="License and links for {{ $project->name }}">
                     <ul class="md:inline-flex">
                         @if ($project->github)
                         <li class="flex-auto md:pr-1">
                             GitHub:
-                            <a href="https://github.com/{{ $project->github }}" class="text-blue-500 hover:text-pink-500">
+                            <a
+                                href="https://github.com/{{ $project->github }}"
+                                class="text-blue-500 hover:text-pink-500"
+                                aria-label="Visit {{ $project->github }} on GitHub">
                                 {{ $project->github }}
                             </a>
                         </li>
                         @endif
 
                         @if ($project->website)
-                        <li class="flex-auto">Website: <a href="{{ $project->website }}"  class="text-blue-500 hover:text-pink-500">{{ $project->website }}</a></li>
+                        <li class="flex-auto">
+                            Website:
+                            <a href="{{ $project->website }}"
+                               class="text-blue-500 hover:text-pink-500"
+                               aria-label="Visit the project website for {{ $project->name }}">
+                               {{ $project->website }}
+                            </a>
+                        </li>
                         @endif
 
                         @if ($project->license)
@@ -45,11 +55,11 @@
                     </ul>
                 </nav>
 
-                <article class="text-gray-700 font-thin">
+                <div class="text-gray-700 font-thin">
                     {!! $project->getContent() !!}
-                </article>
+                </div>
             </section>
         @endforeach
     </div>
-</div>
+</section>
 @endsection

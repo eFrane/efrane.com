@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
     </head>
     <body>
-        <div class="container mx-auto p-4">
+        <header class="container mx-auto pt-4">
             <h1>
                 <span class="sr-only">eFrane's portfolio minisite</span>
                 <img
@@ -16,8 +16,10 @@
                     aria-label="eFrane's Avatar"
                     aria-description="A hand-drawn smirking penguin, light brown-ish on white background.">
             </h1>
+        </header>
 
+        <main class="container mx-auto">
             @yield('body')
-        </div>
+        </main>
     </body>
 </html>
