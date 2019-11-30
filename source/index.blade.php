@@ -1,5 +1,9 @@
 @extends('_layouts.master')
 
+@section('title')
+    Portfolio
+@stop
+
 @section('body')
 <section class="font-thin">
     <p class="mx-auto text-center mb-4">
