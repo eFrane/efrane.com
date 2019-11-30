@@ -7,15 +7,3 @@
 html {
     font-size: 24px;
 }
-
-@responsive {
-    :before.line-break-strict {
-        content: '';
-        line-break: strict
-    }
-
-    :before.line-break-auto {
-        content: '';
-        line-break: auto
-    }
-}
