@@ -16,17 +16,35 @@ use TightenCo\Jigsaw\Jigsaw;
  * });
  */
 
- $events->afterBuild(static function (Jigsaw $jigsaw) {
-   if (true === $jigsaw->getConfig('production')) {
-      $indexHTMLPath = $jigsaw->getDestinationPath() . DIRECTORY_SEPARATOR . 'index.html';
-      $indexHTML = simplexml_load_file($indexHTMLPath);
+/**
+ * Inline style
+ *
+ * @param Jigsaw $jigsaw
+ * @param string $htmlFilePath
+ * @return void
+ */
+function inlineStyle(Jigsaw $jigsaw, string $htmlFilePath) {
+  $htmlFile = simplexml_load_file($htmlFilePath);
 
-      $cssPath = $jigsaw->getDestinationPath() . (string)$indexHTML->head->style['data-src'];
+  $cssPath = $jigsaw->getDestinationPath() . (string)$htmlFile->head->style['data-src'];
 
-      $cssContents = file_get_contents($cssPath);
+  $cssContents = file_get_contents($cssPath);
 
-      $indexHTML->head->style = $cssContents;
+  $htmlFile->head->style = $cssContents;
 
-      file_put_contents($indexHTMLPath, $indexHTML->asXML());
-   }
- });
+  file_put_contents($htmlFilePath, $htmlFile->asXML());
+}
+
+$events->afterBuild(static function (Jigsaw $jigsaw) {
+  if (true === $jigsaw->getConfig('production')) {
+    $htmlFiles = [
+      '/index.html',
+      '/imprint/index.html',
+      '/privacy/index.html',
+    ];
+
+    foreach ($htmlFiles as $htmlFile) {
+      inlineStyle($jigsaw, $jigsaw->getDestinationPath().$htmlFile);
+    }
+  }
+});
