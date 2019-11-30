@@ -1,6 +1,7 @@
 <?php
 
 use TightenCo\Jigsaw\Jigsaw;
+use Symfony\Component\Finder\Finder;
 
 /** @var $container \Illuminate\Container\Container */
 /** @var $events \TightenCo\Jigsaw\Events\EventBus */
@@ -37,14 +38,13 @@ function inlineStyle(Jigsaw $jigsaw, string $htmlFilePath) {
 
 $events->afterBuild(static function (Jigsaw $jigsaw) {
   if (true === $jigsaw->getConfig('production')) {
-    $htmlFiles = [
-      '/index.html',
-      '/imprint/index.html',
-      '/privacy/index.html',
-    ];
+    $htmlFilesFinder = Finder::create()
+      ->in($jigsaw->getDestinationPath())
+      ->name('*.html')
+      ->files();
 
-    foreach ($htmlFiles as $htmlFile) {
-      inlineStyle($jigsaw, $jigsaw->getDestinationPath().$htmlFile);
+    foreach ($htmlFilesFinder as $htmlFile) {
+      inlineStyle($jigsaw, $htmlFile->getRealPath());
     }
   }
 });
