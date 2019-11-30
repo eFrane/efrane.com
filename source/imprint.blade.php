@@ -27,8 +27,8 @@
         <div class="table-row">
             <dt class="table-cell pr-4 font-medium">E-Mail:</dt>
             <dd class="table-cell">
-                efrane@meanderingsoul.com<br class="sm:hidden"/>
-                (PGP-Fingerprint: 56AE 4A43 D25A 020F 0802 CCEF EC87 46AF 2F3A 3923)
+                efrane&#64;meanderingsoul.com<br class="sm:hidden"/>
+                (<abbr title="Pretty good privacy" lang="en">PGP</abbr>-<span lang="en">Fingerprint</span>: 56AE 4A43 D25A 020F 0802 CCEF EC87 46AF 2F3A 3923)
             </dd>
         </div>
     </dl>
