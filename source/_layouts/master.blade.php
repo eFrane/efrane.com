@@ -22,14 +22,14 @@
             />
         </header>
 
-        <main class="container sm:mx-2 md:mx-auto">
+        <main class="container px-2 sm:p-0 sm:mx-auto">
             @yield('body')
         </main>
 
         <footer class="container mx-auto mb-4 border-t border-gray-700 pt-2">
             <nav role="complementary">
                 <ul class="text-gray-700 text-2xs">
-                    <li class="inline pr-2">
+                    <li class="inline pr-2 pl-2 sm:pl-0">
                         <a href="/" class="text-blue-700 hover:text-pink-900">Home</a>
                     </li>
                     <li class="inline pr-2">
