@@ -25,8 +25,8 @@
 
     <div class="md:flex md:flex-wrap">
         @foreach ($projects as $project)
-            <section class="pr-4 pb-4 mb-4 mt-0 flex-none md:w-1/2 lg:w-1/3" role="region" aria-labelledby="{{ snake_case($project->name) }}">
-                <h3 class="text-xl" id="{{ snake_case($project->name) }}">{{ $project->name }}</h3>
+            <section class="pr-4 pb-4 mb-4 mt-0 flex-none md:w-1/2 lg:w-1/3" role="region" aria-labelledby="{{ $project->snakeName }}">
+                <h3 class="text-xl" id="{{ $project->snakeName }}">{{ $project->name }}</h3>
 
                 <nav class="text-2xs" aria-label="License and links for {{ $project->name }}">
                     <ul class="md:inline-flex">
