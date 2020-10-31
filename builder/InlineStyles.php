@@ -37,7 +37,8 @@ class InlineStyles implements BuilderInterface {
      * @param string $htmlFilePath
      * @return void
      */
-    private function inlineStyle(Jigsaw $jigsaw, string $htmlFilePath) {
+    private function inlineStyle(Jigsaw $jigsaw, string $htmlFilePath): void
+    {
         $htmlFile = simplexml_load_file($htmlFilePath);
 
         $cssPath = $jigsaw->getDestinationPath() . (string)$htmlFile->head->style['data-src'];
