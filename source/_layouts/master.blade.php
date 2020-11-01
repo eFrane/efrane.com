@@ -88,6 +88,14 @@
                     alt="A roof top completely grown over with moss"
                     aria-hidden="true"
             />
+
+            <div class="text-center text-3xs mt-2">
+                Built with <a href="https://jigsaw.tighten.co" class="text-mossy-green-light hover:text-mossy-green underline">Jigsaw</a> &amp;
+                <a href="https://tailwindcss.com" class="text-mossy-green-light hover:text-mossy-green underline">Tailwind CSS</a> – background patterns
+                are from <a href="http://www.heropatterns.com" class="text-mossy-green-light hover:text-mossy-green underline">HeroPatterns</a>,
+                icons are from <a href="https://heroicons.com" class="text-mossy-green-light hover:text-mossy-green underline">HeroIcons</a>
+                and <a href="https://simpleicons.org" class="text-mossy-green-light hover:text-mossy-green underline">SimpleIcons</a>.
+            </div>
         </footer>
     </body>
 </html>
