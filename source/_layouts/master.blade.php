@@ -27,8 +27,8 @@
         </main>
 
         <footer class="container mx-auto mb-16 border-t-2 border-mossy-green pt-2">
-            <div class="flex justify-between mb-2">
-                <nav role="complementary">
+            <div class="md:flex justify-between mb-2">
+                <nav role="complementary" class="mb-2 md:mb-0">
                     <ul class="text-gray-700 text-2xs cursor-default">
                         <li class="inline pr-2 pl-2 sm:pl-0">
                             <a href="/" class="text-mossy-green-light hover:text-mossy-green underline">Home</a>
