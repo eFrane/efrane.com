@@ -2,8 +2,10 @@
     "require": {
         "php": ">=7.1",
         "ext-simplexml": "*",
+        "ext-json": "*",
 
-        "tightenco/jigsaw": "^1.3"
+        "tightenco/jigsaw": "^1",
+        "illuminate/cache": "7.29.2"
     },
     "autoload": {
         "psr-4": {

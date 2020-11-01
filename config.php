@@ -1,17 +1,18 @@
 <?php
 
-use Illuminate\Support\Str;
+use EFraneCom\Builder\ProjectItem;
+use TightenCo\Jigsaw\Collection\CollectionItem;
 
 return [
-    'production' => false,
-    'baseUrl' => '',
+    'production'  => false,
+    'baseUrl'     => '',
     'collections' => [
-        'projects' =>[
+        'projects' => [
             'path' => 'projects',
             'sort' => 'name',
-            'map' => static function ($project) {
-                return Project::fromItem($project);
-            }
-        ]
+            'map'  => static function (CollectionItem $project) {
+                return ProjectItem::fromItem($project);
+            },
+        ],
     ],
 ];
