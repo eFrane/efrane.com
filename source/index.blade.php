@@ -10,8 +10,7 @@
         Hello.  I am eFrane.
     </p>
     <p>
-        I am a
-        <a class="text-mossy-green-light hover:text-mossy-green underline" href="https://meanderingsoul.com">blogger</a>,
+        I am a <a class="text-mossy-green-light hover:text-mossy-green underline" href="https://meanderingsoul.com">blogger</a>,
         <a class="text-mossy-green-light hover:text-mossy-green underline" href="https://www.youtube.com/channel/UCA9vabs2diMrQP4-Jm32Qwg">musician</a>,
         <a class="text-mossy-green-light hover:text-mossy-green underline" href="https://eyeem.com/eFrane">photographer</a>,
         and <a class="text-mossy-green-light hover:text-mossy-green underline" href="https://github.com/eFrane">programmer</a>
