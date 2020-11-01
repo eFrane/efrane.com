@@ -21,10 +21,6 @@
 
     <dl class="table xs:w-full sm:w-1/3 md:w-3/4 mb-4">
         <div class="table-row">
-            <dt class="table-cell pr-4 font-medium">Website:</dt>
-            <dd class="table-cell">meanderingsoul.com</dd>
-        </div>
-        <div class="table-row">
             <dt class="table-cell pr-4 font-medium">E-Mail:</dt>
             <dd class="table-cell">
                 efrane&#64;meanderingsoul.com<br class="sm:hidden"/>
