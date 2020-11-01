@@ -11,7 +11,6 @@ use Carbon\Carbon;
 use Illuminate\Cache\FileStore;
 use Illuminate\Contracts\Cache\Repository;
 use Illuminate\Filesystem\Filesystem;
-use Illuminate\Support\Str;
 use TightenCo\Jigsaw\Collection\CollectionItem;
 
 class ProjectItem extends CollectionItem
@@ -40,14 +39,6 @@ class ProjectItem extends CollectionItem
         $project->loadDownlads();
 
         return $project;
-    }
-
-    /**
-     * @return string
-     */
-    public function getSnakeName(): string
-    {
-        return Str::snake($this->get('name'));
     }
 
     /**
