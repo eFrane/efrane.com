@@ -89,7 +89,7 @@
                     aria-hidden="true"
             />
 
-            <div class="text-center text-3xs mt-2">
+            <div class="text-center text-2xs mt-2">
                 Built with <a href="https://jigsaw.tighten.co" class="text-mossy-green-light hover:text-mossy-green underline">Jigsaw</a> &amp;
                 <a href="https://tailwindcss.com" class="text-mossy-green-light hover:text-mossy-green underline">Tailwind CSS</a> – background patterns
                 are from <a href="http://www.heropatterns.com" class="text-mossy-green-light hover:text-mossy-green underline">HeroPatterns</a>,

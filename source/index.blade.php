@@ -23,7 +23,13 @@
 <section class="mt-4" role="region" aria-labelledby="projects-header">
     <h2 class="text-2xl mb-2" id="projects-header">Projects I have worked on</h2>
 
-    <div class="md:flex md:flex-wrap md:bg-fixed bg-pattern pt-4">
+    <p class="font-thin">
+        I am a big proponent of open source software. Below is a list of projects I have worked on in the past.
+        Most of these are still actively maintained or even improved upon. Find out more by visiting the linked
+        websites or code repositories.
+    </p>
+
+    <div class="md:flex md:flex-wrap md:bg-fixed bg-pattern mt-4 pt-4">
         @each('_layouts.components.project', $projects, 'project')
     </div>
 </section>
