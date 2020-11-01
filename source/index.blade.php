@@ -21,8 +21,8 @@
         in my carry-on, you can generally safely assume I'm ill.
     </p>
 </section>
-<section class="mt-4" role="region" aria-labelledby="things_header">
-    <h2 class="text-2xl mb-2" id="things_header">Projects I have worked on</h2>
+<section class="mt-4" role="region" aria-labelledby="projects-header">
+    <h2 class="text-2xl mb-2" id="projects-header">Projects I have worked on</h2>
 
     <div class="md:flex md:flex-wrap md:bg-fixed bg-pattern pt-4">
         @each('_layouts.components.project', $projects, 'project')
