@@ -17,6 +17,10 @@
         <div class="text-gray-700 font-thin pt-2">
             {!! $project->getContent() !!}
         </div>
+
+        @if ($project->inactive)
+        <div class="text-gray-700 font-medium pt-2 text-2xs text-center">(This project is currently inactive.)</div>
+        @endif
     @endslot
 
 @endcomponent
