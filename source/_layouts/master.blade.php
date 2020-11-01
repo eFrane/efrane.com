@@ -44,37 +44,37 @@
                 <nav role="complimentary">
                     <ul class="text-gray-700 text-2xs cursor-default pl-2 sm:pl-0">
                         <li class="inline pr-4">
-                            <a href="https://brightneonfencing.bandcamp.com" title="Bandcamp">
+                            <a href="https://brightneonfencing.bandcamp.com" aria-label="Bandcamp">
                                 <img src="/assets/images/bandcamp.svg" alt="Bandcamp logo" width="16" height="16" class="inline" />
                             </a>
                         </li>
                         <li class="inline pr-4">
-                            <a href="https://github.com/eFrane" title="GitHub">
+                            <a href="https://github.com/eFrane" aria-label="GitHub">
                                 <img src="/assets/images/github.svg" alt="GitHub logo" width="16" height="16"  class="inline" />
                             </a>
                         </li>
                         <li class="inline pr-4">
-                            <a href="https://instagram.com/eFrane" title="Instagram">
+                            <a href="https://instagram.com/eFrane" aria-label="Instagram">
                                 <img src="/assets/images/instagram.svg" alt="Instagram logo" width="16" height="16" class="inline" />
                             </a>
                         </li>
                         <li class="inline pr-4">
-                            <a href="https://www.npmjs.com/~efrane" title="npm">
+                            <a href="https://www.npmjs.com/~efrane" aria-label="npm">
                                 <img src="/assets/images/npm.svg" alt="npm logo" width="16" height="16" class="inline" />
                             </a>
                         </li>
                         <li class="inline pr-4">
-                            <a href="https://packagist.org/users/eFrane/" title="Packagist">
+                            <a href="https://packagist.org/users/eFrane/" aria-label="Packagist">
                                 <img src="/assets/images/php.svg" alt="php logo" width="16" height="16" class="inline" />
                             </a>
                         </li>
                         <li class="inline pr-4">
-                            <a href="https://twitter.com/eFrane" title="Twitter">
+                            <a href="https://twitter.com/eFrane" aria-label="Twitter">
                                 <img src="/assets/images/twitter.svg" alt="Twitter logo" width="16" height="16" class="inline" />
                             </a>
                         </li>
                         <li class="inline">
-                            <a href="https://www.youtube.com/channel/UCA9vabs2diMrQP4-Jm32Qwg" title="YouTube">
+                            <a href="https://www.youtube.com/channel/UCA9vabs2diMrQP4-Jm32Qwg" aria-label="YouTube">
                                 <img src="/assets/images/youtube.svg" alt="YouTube logo" width="16" height="16" class="inline" />
                             </a>
                         </li>

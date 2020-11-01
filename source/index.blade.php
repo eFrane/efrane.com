@@ -21,7 +21,7 @@
     </p>
 </section>
 <section class="mt-4" role="region" aria-labelledby="projects-header">
-    <h2 class="text-2xl mb-2" id="projects-header">Projects I have worked on</h2>
+    <h2 class="text-2xl mb-2" id="projects-header">Projects I have<br class="sm:hidden" /> worked on</h2>
 
     <p class="font-thin">
         I am a big proponent of open source software. Below is a list of projects I have worked on in the past.
