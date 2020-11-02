@@ -55,7 +55,7 @@ class ProjectItem extends CollectionItem
 
         return sprintf(
             '%d%s',
-            ($magnitude > 0) ? floor($this->downloadCount / pow(10, 3 * $magnitude)) : $this->downloadCount,
+            floor($this->downloadCount / pow(10, 3 * $magnitude)),
             $suffixes[$magnitude]
         );
     }
