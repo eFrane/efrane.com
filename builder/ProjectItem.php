@@ -43,7 +43,7 @@ class ProjectItem extends CollectionItem
 
     public function getRoundedDownloadCount(): string
     {
-        $prefixes = [
+        $suffixes = [
             0 => '',
             1 => 'k',
             2 => 'M',
@@ -56,7 +56,7 @@ class ProjectItem extends CollectionItem
         return sprintf(
             '%d%s',
             ($magnitude > 0) ? floor($this->downloadCount / pow(10, 3 * $magnitude)) : $this->downloadCount,
-            $prefixes[$magnitude]
+            $suffixes[$magnitude]
         );
     }
 
