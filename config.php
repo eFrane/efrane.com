@@ -1,5 +1,6 @@
 <?php
 
+use Carbon\Carbon;
 use EFraneCom\Builder\ProjectItem;
 use Illuminate\Support\Str;
 use TightenCo\Jigsaw\Collection\CollectionItem;
@@ -12,6 +13,10 @@ use TightenCo\Jigsaw\Collection\CollectionItem;
  */
 function snake(string $str): string {
     return Str::snake($str);
+}
+
+function carbon($date): Carbon {
+    return Carbon::parse($date);
 }
 
 return [
