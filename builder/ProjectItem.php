@@ -15,7 +15,10 @@ use TightenCo\Jigsaw\Collection\CollectionItem;
 
 class ProjectItem extends CollectionItem
 {
-    const SECONDS_PER_WEEK = 604800;
+    /**
+     * @const int Cache download counts for a day
+     */
+    const DOWNLOAD_CACHE_DURATION = 86400;
     /**
      * @var string
      */
@@ -90,7 +93,7 @@ class ProjectItem extends CollectionItem
 
         $this->downloadCount = $this->cache->remember(
             'downloads.composer.'.$composerPackage,
-            self::SECONDS_PER_WEEK,
+            self::DOWNLOAD_CACHE_DURATION,
             function () use ($composerPackage) {
                 return $this->doFetchComposerDownloadCount($composerPackage);
             }
@@ -103,7 +106,7 @@ class ProjectItem extends CollectionItem
 
         $this->downloadCount = $this->cache->remember(
             'downloads.npm.'.$npmPackage,
-            self::SECONDS_PER_WEEK,
+            self::DOWNLOAD_CACHE_DURATION,
             function () use ($npmPackage) {
                 return $this->doFetchNpmPackageCount($npmPackage);
             }
