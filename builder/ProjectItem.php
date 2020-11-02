@@ -41,12 +41,23 @@ class ProjectItem extends CollectionItem
         return $project;
     }
 
-    /**
-     * @return int
-     */
-    public function getDownloadCount(): int
+    public function getRoundedDownloadCount(): string
     {
-        return $this->downloadCount;
+        $prefixes = [
+            0 => '',
+            1 => 'k',
+            2 => 'M',
+            3 => 'B',
+            4 => 'T',
+        ];
+
+        $magnitude = intdiv((int)floor(log10($this->downloadCount)), 3);
+
+        return sprintf(
+            '%d%s',
+            ($magnitude > 0) ? floor($this->downloadCount / pow(10, 3 * $magnitude)) : $this->downloadCount,
+            $prefixes[$magnitude]
+        );
     }
 
     public function hasDownloadCount(): bool
