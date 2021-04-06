@@ -15,5 +15,8 @@ module.exports = {
     }
   },
   variants: {},
-  plugins: []
+  plugins: [],
+
+  // purgecss is configured by 'laravel-mix-purgecss'
+  purge: false
 }
