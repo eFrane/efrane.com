@@ -8,17 +8,16 @@ namespace EFraneCom\Builder;
 
 
 use Carbon\Carbon;
-use Illuminate\Cache\FileStore;
-use Illuminate\Contracts\Cache\Repository;
-use Illuminate\Filesystem\Filesystem;
 use TightenCo\Jigsaw\Collection\CollectionItem;
 
 class ProjectItem extends CollectionItem
 {
+    use UsesCaching;
+
     /**
      * @const int Cache download counts for a day
      */
-    const DOWNLOAD_CACHE_DURATION = 86400;
+    private const DOWNLOAD_CACHE_DURATION = 86400;
     /**
      * @var string
      */
@@ -28,11 +27,6 @@ class ProjectItem extends CollectionItem
      * @var int
      */
     protected $downloadCount = 0;
-
-    /**
-     * @var Repository
-     */
-    protected $cache;
 
     public static function fromItem(CollectionItem $item): CollectionItem
     {
@@ -66,12 +60,6 @@ class ProjectItem extends CollectionItem
     public function hasDownloadCount(): bool
     {
         return 0 < $this->downloadCount;
-    }
-
-    private function initCache(): void {
-        $store = new FileStore(new Filesystem(), '.cache');
-
-        $this->cache = new \Illuminate\Cache\Repository($store);
     }
 
     private function loadDownlads(): void

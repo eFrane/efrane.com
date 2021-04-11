@@ -21,6 +21,8 @@
     </p>
 </section>
 <section class="mt-4" role="region" aria-labelledby="projects-header">
+
+
     <h2 class="text-2xl mb-2" id="projects-header">Projects I have<br class="sm:hidden" /> helped build</h2>
 
     <p class="font-thin">
@@ -29,7 +31,16 @@
         websites or code repositories.
     </p>
 
-    <div class="md:flex md:flex-wrap md:bg-fixed bg-pattern mt-4 pt-4">
+    <div class="flex">
+        <img
+                src="{{ 'assets/images/contributionsgraph.png'  }}"
+                width="2048"
+                height="64"
+                alt="A graph representation of my GitHub contributions"
+                class="mt-4 pt-4 mx-auto flex-grow h-8"
+        />
+    </div>
+    <div class="md:flex md:flex-wrap md:bg-fixed bg-pattern">
         @each('_layouts.components.project', $projects, 'project')
     </div>
 </section>
