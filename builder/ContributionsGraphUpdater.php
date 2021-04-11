@@ -58,7 +58,7 @@ class ContributionsGraphUpdater implements BuilderInterface
         imagefill($image, 0, 0, $white);
         imagecolortransparent($image, $white);
 
-        $graphHeight = $imageHeight - 8;
+        $graphHeight = $imageHeight - 2;
         $graphStart = 0;
         $graphEnd = $imageWidth * 0.99;
 
