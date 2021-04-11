@@ -11,5 +11,7 @@
         "psr-4": {
             "EFraneCom\\Builder\\": "./builder"
         }
-    }
+    },
+    "name": "efrane/efrane.com",
+    "description": "The code for https://efrane.com"
 }
