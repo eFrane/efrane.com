@@ -66,7 +66,6 @@ class ContributionsGraphUpdater implements BuilderInterface
         $previousX = $graphStart;
 
         imageline($image, 0, $imageHeight, $graphStart, $graphHeight, $darkGreen);
-        imageline($image, $graphEnd - 1, $graphHeight, $imageWidth, $imageHeight, $darkGreen);
 
         foreach ($contributionsPerDay as $day => $contributionCount) {
             $nextY = $graphHeight - (int) (($contributionCount / $maxContributions) * $graphHeight);
@@ -77,6 +76,8 @@ class ContributionsGraphUpdater implements BuilderInterface
             $previousY = $nextY;
             $previousX = $nextX;
         }
+
+        imageline($image, $nextX, $nextY, $imageWidth, $imageHeight, $darkGreen);
 
         imagefilltoborder($image, $graphStart + 1, $graphHeight + 1, $darkGreen, $lightGreen);
 
