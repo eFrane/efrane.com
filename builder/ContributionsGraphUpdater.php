@@ -48,6 +48,8 @@ class ContributionsGraphUpdater implements BuilderInterface
         $imageWidth = 2048;
 
         $image = imagecreate($imageWidth, $imageHeight);
+        imageantialias($image, true);
+        imagesetthickness($image, 2);
 
         $white = imagecolorallocate($image, 0xff, 0xff, 0xff);
         $lightGreen = imagecolorallocate($image, 0x82, 0x83, 0x5c);
