@@ -53,18 +53,22 @@ class ContributionsGraphUpdater implements BuilderInterface
         $lightGreen = imagecolorallocate($image, 0x82, 0x83, 0x5c);
         $darkGreen = imagecolorallocate($image, 0x3b, 0x48, 0x2e);
 
-        imagefill($image, 1, 1, $white);
+        imagefill($image, 0, 0, $white);
         imagecolortransparent($image, $white);
 
         $graphHeight = $imageHeight - 8;
+        $graphStart = 0;
+        $graphEnd = $imageWidth * 0.99;
 
         $previousY = $graphHeight;
-        $previousX = 0;
+        $previousX = $graphStart;
 
-        foreach ($contributionsPerDay as $i => $contributionCount) {
+        imageline($image, 0, $imageHeight, $graphStart, $graphHeight, $darkGreen);
+        imageline($image, $graphEnd, $graphHeight, $imageWidth, $imageHeight, $darkGreen);
 
+        foreach ($contributionsPerDay as $day => $contributionCount) {
             $nextY = $graphHeight - (int) (($contributionCount / $maxContributions) * $graphHeight);
-            $nextX = (int) ((($i + 1) / count($contributionsPerDay)) * $imageWidth);
+            $nextX = (int) ((($day + 1) / count($contributionsPerDay)) * $graphEnd);
 
             imageline($image, $previousX, $previousY, $nextX, $nextY, $darkGreen);
 
@@ -72,7 +76,7 @@ class ContributionsGraphUpdater implements BuilderInterface
             $previousX = $nextX;
         }
 
-        imagefilltoborder($image, 1, $graphHeight + 1, $darkGreen, $lightGreen);
+        imagefilltoborder($image, $graphStart + 1, $graphHeight + 1, $darkGreen, $lightGreen);
 
         imagepng($image, 'source/assets/images/contributionsgraph.png');
 

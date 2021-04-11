@@ -31,13 +31,14 @@
         websites or code repositories.
     </p>
 
-    <div class="flex">
+    <div class="flex mt-4 pt-4 w-11/12 mx-auto">
         <img
                 src="{{ 'assets/images/contributionsgraph.png'  }}"
                 width="2048"
                 height="64"
-                alt="A graph representation of my GitHub contributions"
-                class="mt-4 pt-4 mx-auto flex-grow h-8"
+                alt="A graph representation of my GitHub contributions from {{ $page->contributionsStart }} to {{ $page->contributionsEnd }}."
+                class="object-fill w-full"
+                aria-hidden="true"
         />
     </div>
     <div class="md:flex md:flex-wrap md:bg-fixed bg-pattern">
