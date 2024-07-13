@@ -1,0 +1,42 @@
+name: "Deploy"
+
+permissions:
+  contents: read
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: deployment
+
+    steps:
+    - name: "Checkout"
+      uses: actions/checkout@v4
+
+    - name: "Set up Node.js"
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'
+
+    - name: Install composer dependencies
+      run: composer install
+
+    - name: "Install yarn dependencies"
+      run: yarn install --frozen-lockfile
+
+    - name: "Build"
+      run: GITHUB_API_TOKEN=${{ secrets.GITHUB_API_TOKEN }} yarn prod
+
+    # - name: "Setup SSH Key"
+    #   run: |
+    #     mkdir -p ~/.ssh
+    #     echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+    #     chmod 0600 ~/.ssh/id_ed25519
+    #     ssh-keyscan ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+
+    # - name: "Sync"
+    #   run: rsync -avz --delete-before public/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ vars.DEPLOY_PATH }}
