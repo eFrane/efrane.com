@@ -29,7 +29,7 @@ jobs:
       run: yarn install --frozen-lockfile
 
     - name: "Build"
-      run: GITHUB_API_TOKEN=${{ secrets.GITHUB_API_TOKEN }} yarn prod
+      run: GITHUB_API_TOKEN=${{ secrets.GH_API_TOKEN }} yarn prod
 
     - name: "Setup SSH Key"
       run: |
