@@ -39,4 +39,4 @@ jobs:
         ssh-keyscan ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
     - name: "Sync"
-      run: rsync -avz --delete-before public/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ vars.DEPLOY_PATH }}
+      run: rsync -avz --delete-before build_production/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ vars.DEPLOY_PATH }}
