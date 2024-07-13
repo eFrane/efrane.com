@@ -38,5 +38,5 @@ jobs:
         chmod 0600 ~/.ssh/id_ed25519
         ssh-keyscan ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
-    # - name: "Sync"
-    #   run: rsync -avz --delete-before public/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ vars.DEPLOY_PATH }}
+    - name: "Sync"
+      run: rsync -avz --delete-before public/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ vars.DEPLOY_PATH }}
