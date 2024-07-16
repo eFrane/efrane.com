@@ -3,11 +3,13 @@ updates:
 - package-ecosystem: npm
   directory: "/"
   schedule:
-    interval: weekly
-    time: "04:00"
-    timezone: Europe/Berlin
-  open-pull-requests-limit: 10
-  versioning-strategy: increase
+    interval: daily
+  allow:
+  - dependency-type: all
+  groups:
+    babel:
+      patterns:
+      - "@babel/*"
 - package-ecosystem: github-actions
   directory: "/"
   schedule:
