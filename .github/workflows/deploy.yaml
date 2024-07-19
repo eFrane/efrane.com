@@ -25,6 +25,18 @@ jobs:
       with:
         node-version: '16'
 
+    - name: "Cache yarn dependencies"
+      uses: actions/cache@v4
+      with:
+        path: '**/node_modules'
+        key: ${{ runner.os }}-yarn-${{ hashFiles('**/package-lock.json') }}
+
+    - name: "Cache PHP dependencies"
+      uses: actions/cache@v4
+      with:
+        path: '**/vendor'
+        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+
     - name: Install composer dependencies
       run: composer install
 
