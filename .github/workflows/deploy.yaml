@@ -17,34 +17,7 @@ jobs:
     environment: deployment
 
     steps:
-    - name: "Checkout"
-      uses: actions/checkout@v4
-
-    - name: "Set up Node.js"
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20'
-
-    - name: "Cache yarn dependencies"
-      uses: actions/cache@v4
-      with:
-        path: '**/node_modules'
-        key: ${{ runner.os }}-yarn-${{ hashFiles('**/package-lock.json') }}
-
-    - name: "Cache PHP dependencies"
-      uses: actions/cache@v4
-      with:
-        path: '**/vendor'
-        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
-
-    - name: Install composer dependencies
-      run: composer install
-
-    - name: "Install yarn dependencies"
-      run: yarn install --frozen-lockfile
-
-    - name: "Build"
-      run: GITHUB_API_TOKEN=${{ secrets.GH_API_TOKEN }} yarn prod
+    - uses: ./github/workflows/build.yaml
 
     - name: "Setup SSH Key"
       run: |
