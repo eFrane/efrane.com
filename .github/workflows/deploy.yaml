@@ -21,7 +21,7 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Build
-      uses: ./.github/workflows/build.yml@main
+      uses: eFrane/efrane.com/.github/workflows/build.yml@main
 
     - name: Download build production
       uses: actions/download-artifact@v4
