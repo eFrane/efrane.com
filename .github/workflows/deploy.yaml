@@ -17,6 +17,9 @@ jobs:
     environment: deployment
 
     steps:
+    - name: "Checkout"
+      uses: actions/checkout@v4
+
     - uses: ./github/workflows/build.yaml
 
     - name: "Setup SSH Key"
