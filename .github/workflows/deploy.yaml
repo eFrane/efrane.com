@@ -11,18 +11,15 @@ on:
     - cron: "37 1 1/7 * *"
 
 jobs:
+  build:
+    uses: eFrane/efrane.com/.github/workflows/build.yml@main
+
   deploy:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     environment: deployment
 
     steps:
-    - name: "Checkout"
-      uses: actions/checkout@v4
-
-    - name: Build
-      uses: eFrane/efrane.com/.github/workflows/build.yml@main
-
     - name: Download build production
       uses: actions/download-artifact@v4
       with:
