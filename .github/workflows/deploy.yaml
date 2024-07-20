@@ -12,7 +12,7 @@ on:
 
 jobs:
   build:
-    uses: eFrane/efrane.com/.github/workflows/build.yml@main
+    uses: ./.github/workflows/build.yml
 
   deploy:
     runs-on: ubuntu-latest
