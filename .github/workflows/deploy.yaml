@@ -13,8 +13,6 @@ on:
 jobs:
   build:
     uses: ./.github/workflows/build.yaml
-    with:
-      GH_API_TOKEN: ${{ secrets.GH_API_TOKEN }}
 
   deploy:
     runs-on: ubuntu-latest

@@ -6,9 +6,6 @@ permissions:
 on:
   pull_request:
   workflow_call:
-    secrets:
-      GH_API_TOKEN:
-        required: true
 
 jobs:
   build:
