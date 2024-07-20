@@ -21,7 +21,7 @@
         "sass-loader": "^7.1.0",
         "start-server-and-test": "^2.0.4",
         "vue-template-compiler": "^2.7.16",
-        "yargs": "^4.6.0"
+        "yargs": "^17.7.2"
     },
     "dependencies": {
         "laravel-mix-purgecss": "^4.2.0",
