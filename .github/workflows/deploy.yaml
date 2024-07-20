@@ -20,7 +20,7 @@ jobs:
     - name: "Checkout"
       uses: actions/checkout@v4
 
-    - uses: ./.github/workflows/build.yaml
+    - uses: github.repository/.github/workflows/build.yaml
 
     - name: "Setup SSH Key"
       run: |
