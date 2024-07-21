@@ -28,6 +28,9 @@ jobs:
       with:
         name: build-production
 
+    - run: |
+        ls -l
+
     - name: "Setup SSH Key"
       run: |
         mkdir -p ~/.ssh
