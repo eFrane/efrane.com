@@ -28,9 +28,6 @@ jobs:
       with:
         name: build-production
 
-    - run: |
-        ls -l
-
     - name: "Setup SSH Key"
       run: |
         mkdir -p ~/.ssh
@@ -39,4 +36,4 @@ jobs:
         ssh-keyscan ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
     - name: "Sync"
-      run: rsync -avz --delete-before build_production/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ vars.DEPLOY_PATH }}
+      run: rsync -avz --delete-before . ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ vars.DEPLOY_PATH }}
