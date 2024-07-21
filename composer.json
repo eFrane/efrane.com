@@ -1,13 +1,13 @@
 {
     "require": {
-        "php": ">=7.1",
+        "php": ">=8.3",
         "ext-gd": "*",
         "ext-json": "*",
         "ext-simplexml": "*",
 
-        "tightenco/jigsaw": "^1",
-        "illuminate/cache": "7.29.2",
-        "symfony/http-client": "^5.2"
+        "tightenco/jigsaw": "1.7.4",
+        "illuminate/cache": "^11",
+        "symfony/http-client": "^7"
     },
     "autoload": {
         "psr-4": {
