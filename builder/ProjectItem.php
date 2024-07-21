@@ -75,6 +75,8 @@ class ProjectItem extends CollectionItem
 
     private function fetchComposerDownloadCount(): void
     {
+        echo "Fetching composer download count for {$this->name}...\n";
+
         $composerPackage = $this->get('composer');
 
         $this->doFetchComposerDownloadCount($composerPackage);
@@ -90,6 +92,8 @@ class ProjectItem extends CollectionItem
 
     private function fetchNpmDownloadCount(): void
     {
+        echo "Fetching npm download count for {$this->name}...\n";
+
         $npmPackage = $this->get('npm');
 
         $this->downloadCount = $this->cache->remember(

@@ -23,6 +23,7 @@ class ContributionsGraphUpdater implements BuilderInterface
             throw new \RuntimeException('GITHUB_API_TOKEN is not configured, aborting.');
         }
 
+        echo "Updating contributions graph data...\n";
         $this->initCache();
 
         $contributionsData = $this->cache->remember('contributions.graph.data', self::DOWNLOAD_CACHE_DURATION, function () use ($apiToken) {
@@ -42,6 +43,7 @@ class ContributionsGraphUpdater implements BuilderInterface
             })
             ->toArray();
 
+        echo "Generating contribution graph...\n";
         $maxContributions = max($contributionsPerDay);
 
         $imageHeight = 64;
@@ -100,6 +102,8 @@ class ContributionsGraphUpdater implements BuilderInterface
      */
     private function fetchContributionsFromGitHub(string $apiToken)
     {
+        echo "Fetching contribution data from GitHub...\n";
+
         $client = HttpClient::createForBaseUri('https://api.github.com');
         $query = json_encode(
             [
