@@ -63,3 +63,4 @@ jobs:
         name: build-production
         path: 'build_production'
         retention-days: 1
+      if: github.event_name != 'pull_request'
