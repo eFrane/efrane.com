@@ -49,41 +49,31 @@ class ContributionsGraphUpdater implements BuilderInterface
         $imageHeight = 64;
         $imageWidth = 2048;
 
-        $image = imagecreate($imageWidth, $imageHeight);
-        imageantialias($image, true);
-        imagesetthickness($image, 2);
-
-        $white = imagecolorallocate($image, 0xff, 0xff, 0xff);
-        $lightGreen = imagecolorallocate($image, 0x82, 0x83, 0x5c);
-        $darkGreen = imagecolorallocate($image, 0x3b, 0x48, 0x2e);
-
-        imagefill($image, 0, 0, $white);
-        imagecolortransparent($image, $white);
-
         $graphHeight = $imageHeight - 2;
         $graphStart = 0;
-        $graphEnd = $imageWidth * 0.99;
+        $graphEnd = $imageWidth;
 
-        $previousY = $graphHeight;
-        $previousX = $graphStart;
-
-        imageline($image, 0, $imageHeight, $graphStart, $graphHeight, $darkGreen);
+        $svgLine = "M {$graphStart},{$graphHeight} ";
 
         foreach ($contributionsPerDay as $day => $contributionCount) {
             $nextY = $graphHeight - (int) (($contributionCount / $maxContributions) * $graphHeight);
             $nextX = (int) ((($day + 1) / count($contributionsPerDay)) * $graphEnd);
 
-            imageline($image, $previousX, $previousY, $nextX, $nextY, $darkGreen);
-
-            $previousY = $nextY;
-            $previousX = $nextX;
+            $svgLine .= "{$nextX},{$nextY} ";
         }
 
-        imageline($image, $nextX, $nextY, $imageWidth, $imageHeight, $darkGreen);
+        $svgLine .= "M {$graphEnd},{$graphHeight}";
 
-        imagefilltoborder($image, $graphStart + 1, $graphHeight + 1, $darkGreen, $lightGreen);
+        $svg = <<<SVG
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="{$imageWidth}" height="{$imageHeight}" viewBox="0 0 {$imageWidth} {$imageHeight}">
+    <g>
+        <path d="{$svgLine}" fill="#3b482e" stroke="#82835c" stroke-width="0.5"/>
+    </g>
+</svg>
+SVG;
 
-        imagepng($image, 'source/assets/images/contributionsgraph.png');
+        file_put_contents('source/assets/images/contributions-graph.svg', $svg);
 
         $jigsaw->setConfig('contributionsStart', $firstWeekStart);
         $jigsaw->setConfig('contributionsEnd', $lastWeekStart);

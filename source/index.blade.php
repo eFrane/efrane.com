@@ -33,7 +33,7 @@
 
     <div class="flex mt-4 pt-4 w-11/12 mx-auto">
         <img
-                src="{{ 'assets/images/contributionsgraph.png'  }}"
+                src="{{ 'assets/images/contributions-graph.svg'  }}"
                 width="2048"
                 height="64"
                 alt="A graph representation of my GitHub contributions from {{ $page->contributionsStart }} to {{ $page->contributionsEnd }}."
